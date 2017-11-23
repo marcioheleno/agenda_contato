@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.marcioheleno.contato.CadastroContato;
 import com.marcioheleno.contato.Contato;
+import com.marcioheleno.contato.DeleteContato;
 import com.marcioheleno.contato.ShowContato;
 import com.marcioheleno.contato.UpdateContato;
 
@@ -15,16 +16,14 @@ public class Menu {
 	CadastroContato cadastro = new CadastroContato();
 	ShowContato showContatos = new ShowContato(cadastro);
 	UpdateContato updateContato = new UpdateContato(showContatos);
+	DeleteContato deleteContato = new DeleteContato(updateContato);
 	Contato contato = new Contato();
 
 	public void initializeMenu() {
-		// TODO fazer um funcao de inicialização do menu 
 		Scanner op = new Scanner(System.in);
 		do {
 			this.showMenu();
 			this.opcao = op.nextInt();
-
-			System.out.println(this.opcao);
 			switch (this.opcao) {
 			case 0:
 				showMenuByMenssage();
@@ -89,7 +88,6 @@ public class Menu {
 	public void showContato() {
 		Scanner contato = new Scanner(System.in);
 		System.out.println("Inform o Contato a ser buscado");	
-		//		contato.nextLine();
 		String contato2 = contato.nextLine();
 		boolean response = showContatos.showContato(contato2);
 		if (response == true) {
@@ -107,16 +105,15 @@ public class Menu {
 
 	}
 
-
 	public void removeContato() {
-		
+		Scanner contatoDelete = new Scanner(System.in);
+		System.out.println("Inform o Contato a ser deletado");
+		String conDel = contatoDelete.nextLine();
+		deleteContato.deleteContatoList(conDel);
 	}
-	
 	
 	public void removeList() {
-
+		deleteContato.deleteList();
 	}
-
-
 
 }

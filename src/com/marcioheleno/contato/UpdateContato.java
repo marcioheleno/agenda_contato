@@ -77,7 +77,6 @@ public class UpdateContato {
 				System.out.println("Digite o novo telefone do Contato.");
 				Scanner atualizarTeleContato = new Scanner(System.in);
 				int TeleAtualizado = atualizarTeleContato.nextInt();
-//				TeleAtualizado.
 				showContato.cadastroContato.listContato.get(i).setTelefone(TeleAtualizado);
 				System.out.println("Telefone atualizado.");
 			} else {
