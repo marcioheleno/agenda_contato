@@ -42,6 +42,9 @@ public class Menu {
 				atualizarContato();
 				break;
 			case 5:
+				removeContato();
+				break;
+			case 6:
 				removeList();
 				break;
 
@@ -64,7 +67,8 @@ public class Menu {
 		System.out.println("     02 - Exibir todos os Contatos       ");
 		System.out.println("      03 - Pesquisar por contato:        ");
 		System.out.println("         04 - Atualizar contato:         ");
-		System.out.println("           05 - Apagar Agenda:           ");
+		System.out.println("          05 - Apagar Contato:          ");
+		System.out.println("           06 - Apagar Agenda:           ");
 		System.out.println("-----------------------------------------");
 		System.out.println("------Digite uma das opções acima:-------");
 	}
@@ -104,6 +108,11 @@ public class Menu {
 	}
 
 
+	public void removeContato() {
+		
+	}
+	
+	
 	public void removeList() {
 
 	}
